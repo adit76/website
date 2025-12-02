@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Container, Stack, Button } from "@mui/material";
-import MeteorShower from "./components/meteorShower/page";
+import { Container, Button } from "@mui/material";
+import MeteorShower from "../components/meteorShower/page";
 
 export function HeroBanner() {
   return (
@@ -36,35 +36,6 @@ export function HeroBanner() {
 export default function Home() {
   return (
     <main>
-      <header>
-        <Container>
-          <div className="header-main flex p-4 items-center justify-between">
-            <div className="logo">
-              <Image
-                src="/logo.jpg"
-                alt="Ninja IT"
-                width={200}
-                height={0}
-                priority
-              />
-            </div>
-            <div className="menu-items">
-              <ul className="flex gap-8">
-                <li>Home</li>
-                <li>Services</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
-              </ul>
-            </div>
-            <div className="actions">
-              <Stack spacing={2} direction="row">
-                <Button variant="text">Login</Button>
-                <Button variant="contained">Contact Us</Button>
-              </Stack>
-            </div>
-          </div>
-        </Container>
-      </header>
       <section id="main-banner">
         <HeroBanner />
       </section>
