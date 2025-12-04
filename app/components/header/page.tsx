@@ -21,12 +21,8 @@ const Header = () => {
           </div>
           <div className="actions">
             <Stack spacing={2} direction="row">
-              <Button variant="text" sx={{ fontWeight: "900" }}>
-                Login
-              </Button>
-              <Button variant="contained" sx={{ fontWeight: "bold" }}>
-                Contact Us
-              </Button>
+              <Button variant="text">Login</Button>
+              <Button variant="contained">Contact Us</Button>
             </Stack>
           </div>
         </div>
