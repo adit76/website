@@ -6,7 +6,7 @@ import { Container, Stack, Button } from "@mui/material";
 
 const Header = () => {
   return (
-    <header>
+    <header className="bg-black">
       <Container maxWidth="lg">
         <div className="header-main flex p-4 items-center justify-between">
           <div className="logo">
