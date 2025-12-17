@@ -1,24 +1,33 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Logo from "../../../public/logo.jpg";
 import { Container, Stack, Button } from "@mui/material";
 
 const Header = () => {
   return (
-    <header>
+    <header className="bg-black">
       <Container maxWidth="lg">
         <div className="header-main flex p-4 items-center justify-between">
           <div className="logo">
-            <Image src={Logo} alt="Ninja IT" width={200} height={0} priority />
+            <Link href="/">
+              <Image
+                src={Logo}
+                alt="Ninja IT"
+                width={200}
+                height={0}
+                priority
+              />
+            </Link>
           </div>
-          <div className="menu-items">
+          <nav className="menu-items">
             <ul className="flex gap-8">
               <li>Home</li>
               <li>Services</li>
               <li>About Us</li>
               <li>Contact Us</li>
             </ul>
-          </div>
+          </nav>
           <div className="actions">
             <Stack spacing={2} direction="row">
               <Button variant="text">Login</Button>

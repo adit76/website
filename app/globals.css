@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
   --foreground: #fff;
 }
 
@@ -40,6 +39,12 @@ header .main-header{
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+.marquee img {
+  filter: grayscale(100%);
+  transition: 0.3s ease-in-out;
+}
 
-
-
+.marquee img:hover {
+  filter: none;
+  cursor: pointer;
+}
