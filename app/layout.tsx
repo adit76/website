@@ -31,6 +31,7 @@ export default function RootLayout({
       <body
         cz-shortcut-listen="true"
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ background: "#000" }}
       >
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>{children}</ThemeProvider>

@@ -48,3 +48,7 @@ header .main-header{
   filter: none;
   cursor: pointer;
 }
+
+.main-banner{
+  min-height: 140vh;
+}
