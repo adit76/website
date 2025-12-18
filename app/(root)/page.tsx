@@ -19,22 +19,29 @@ import DirectionsIcon from "@mui/icons-material/Directions";
 
 export function HeroBanner() {
   return (
-    <MeteorShower className="flex aspect-16/9 items-end justify-center">
+    <MeteorShower className="main-banner flex aspect-16/9 items-end justify-center">
       <Container>
         <div className="banner-content min-h-screen text-center pt-35">
           <div className="banner-items">
-            <Typography variant="h1" sx={{ fontSize: "3rem", mb: 1 }}>
+            <Typography variant="h1" sx={{ mb: 1, fontWeight: "bold" }}>
               Welcome to Ninja IT Solutions
             </Typography>
             <Typography variant="h6" sx={{ mb: 4 }}>
               {" "}
-              Your one-stop solution for all your hospitality needs.
+              Our advanced POS software is designed to revolutionize your
+              business operations. With its powerful features and <br />
+              user-friendly interface, enhance customer experiences, and boost
+              your overall efficiency.
             </Typography>
-            <Button variant="contained" sx={{ fontWeight: "bold" }}>
+            <Button
+              variant="contained"
+              size="large"
+              sx={{ fontWeight: "bold" }}
+            >
               Get Started
             </Button>
           </div>
-          <div className="hero-img pt-20">
+          <div className="hero-img pt-24">
             <Image
               src="/hero-image.png"
               alt="Hero Image"
@@ -60,13 +67,13 @@ export default function Home() {
       {/* Our Services */}
       <section
         id="services"
-        className="px-8 py-16"
+        className="px-8 py-24"
         style={{ background: "#F7F7F7" }}
       >
         <Container>
           <Grid container>
             <Grid size={12}>
-              <div className="services-section py-16 text-center w-full">
+              <div className="services-section pb-16 text-center w-full">
                 <Typography
                   sx={{ color: "#cc1d2e", fontWeight: "bold" }}
                   variant="h6"
@@ -175,7 +182,7 @@ export default function Home() {
       {/* Services Overview */}
       <section
         id="services-overview"
-        className="px-8 py-16"
+        className="px-8 py-24"
         style={{ background: "#F7F7F7" }}
       >
         <Container>
@@ -190,7 +197,7 @@ export default function Home() {
               />
             </Grid>
             <Grid size={6}>
-              <div className="services-section py-16 ">
+              <div className="services-section pb-16 ">
                 <Typography
                   sx={{ color: "#cc1d2e", fontWeight: "bold" }}
                   variant="h6"
@@ -312,7 +319,7 @@ export default function Home() {
       {/* Pricing */}
       <section
         id="pricing"
-        className="px-8 py-16"
+        className="px-8 py-24"
         style={{
           background:
             "linear-gradient(90deg,rgba(249, 234, 234, 1) 20%, rgba(255, 255, 255, 1) 100%)",
@@ -321,7 +328,7 @@ export default function Home() {
         <Container>
           <Grid container>
             <Grid size={12}>
-              <div className="services-section py-16 text-center w-full">
+              <div className="services-section pb-16 text-center w-full">
                 <Typography
                   sx={{ color: "#cc1d2e", fontWeight: "bold" }}
                   variant="h6"
@@ -477,7 +484,7 @@ export default function Home() {
                 <Button
                   variant="contained"
                   fullWidth
-                  sx={{ fontWeight: "bold" }}
+                  sx={{ fontWeight: "bold", mt: 2 }}
                 >
                   Get Started
                 </Button>
@@ -621,7 +628,7 @@ export default function Home() {
                 <Button
                   variant="contained"
                   fullWidth
-                  sx={{ fontWeight: "bold" }}
+                  sx={{ fontWeight: "bold", mt: 2 }}
                 >
                   Get Started
                 </Button>
@@ -765,7 +772,7 @@ export default function Home() {
                 <Button
                   variant="contained"
                   fullWidth
-                  sx={{ fontWeight: "bold" }}
+                  sx={{ fontWeight: "bold", mt: 2 }}
                 >
                   Get Started
                 </Button>
@@ -778,13 +785,13 @@ export default function Home() {
       {/* Our Clients */}
       <section
         id="clients"
-        className="px-8 py-16"
+        className="px-8 py-24"
         style={{ background: "#F7F7F7" }}
       >
         <Container>
           <Grid container>
             <Grid size={12}>
-              <div className="services-section py-16 text-center w-full">
+              <div className="services-section pb-16 text-center w-full">
                 <Typography
                   sx={{ color: "#cc1d2e", fontWeight: "bold" }}
                   variant="h6"
@@ -860,7 +867,7 @@ export default function Home() {
       {/* Call to Action */}
       <section
         id="cta"
-        className="px-8 py-16"
+        className="px-8 py-24"
         style={{ background: "#F7F7F7" }}
       >
         <Container>
@@ -902,6 +909,7 @@ export default function Home() {
             <div className="cta-but text-center">
               <Button
                 variant="contained"
+                size="large"
                 sx={{
                   bgcolor: "white", // sets the background color
                   color: "black", // sets the text color for contrast
@@ -914,7 +922,11 @@ export default function Home() {
               >
                 Start Free Trial
               </Button>
-              <Button variant="contained" sx={{ fontWeight: "bold" }}>
+              <Button
+                variant="contained"
+                size="large"
+                sx={{ fontWeight: "bold" }}
+              >
                 Contact Us
               </Button>
             </div>
@@ -924,7 +936,7 @@ export default function Home() {
 
       <footer className="p-4" style={{ background: "#000" }}>
         <Container>
-          <Grid container spacing={2} className="footer-wrapper my-16">
+          <Grid container spacing={2} className="relative footer-wrapper my-16">
             <Grid size={4}>
               <Image src="/logo.jpg" width={180} height={100} alt="Logo" />
               <Typography variant="body1" sx={{ color: "#E0E0E0", mt: 4 }}>
@@ -980,6 +992,13 @@ export default function Home() {
                 </Button>
               </Paper>
             </Grid>
+            <Image
+              className="absolute -right-50 bottom-0"
+              src="/images/footer-design-1.svg"
+              alt=""
+              width={400}
+              height={300}
+            />
           </Grid>
 
           <Divider sx={{ borderColor: "rgba(117,117,117,0.5)", my: 2 }} />
@@ -987,7 +1006,7 @@ export default function Home() {
             variant="body1"
             sx={{ color: "#757575", textAlign: "center" }}
           >
-            © Copyright 2025. Design by Adit
+            © Copyright 2025. Designed by Adit
           </Typography>
         </Container>
       </footer>
