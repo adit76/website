@@ -6,7 +6,7 @@ import {
   LinkedIn,
   X,
   Instagram,
-  Send,
+  NorthEast,
 } from "@mui/icons-material";
 import MeteorShower from "../components/meteorShower/page";
 import Marquee from "react-fast-marquee";
@@ -987,7 +987,12 @@ export default function Home() {
                   inputProps={{ "aria-label": "search google maps" }}
                 />
 
-                <Button variant="contained" endIcon={<Send />}>
+                <Button
+                  variant="contained"
+                  size="small"
+                  sx={{ fontWeight: "bold", lineHeight: 1.5, ml: 1 }}
+                  endIcon={<NorthEast fontSize="small" />}
+                >
                   Send
                 </Button>
               </Paper>
