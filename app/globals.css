@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+*,
+*:after,
+*:before{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 :root {
   --foreground: #fff;
 }
@@ -50,5 +58,39 @@ header .main-header{
 }
 
 .main-banner{
-  min-height: 140vh;
+  min-height: 150vh;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #757575;
+  background-color: rgba(117,117,117,1) !important;
+  color: #252525 !important;
+  cursor: not-allowed  !important;
+  pointer-events: auto !important;
+}
+
+.services-section{
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .main-banner{
+    min-height: 100vh;
+  }
+
+  .hero-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cta-but{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin: auto;
+  }
 }
