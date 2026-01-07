@@ -8,25 +8,25 @@ import {
   TextField,
   Rating,
   Button,
+  CircularProgress,
 } from "@mui/material";
-import Image from "next";
 import Form from "next/form";
-
-import Logo from "@/public/logo.jpg";
-
 import MeteorShower from "@/app/components/meteorShower/page";
 
 const FeedbackForm = () => {
-  const [value, setValue] = useState<number | null>(0);
+  const [rating, setRating] = useState<number | null>(0);
+
+  const [loading, setLoading] = useState(false);
 
   const formAction = async (formData: FormData) => {
+    setLoading(true);
     // "use server";
     const venue = formData.get("Venue");
     const givenNames = formData.get("Given Names");
     const lastName = formData.get("Last Name");
     const comments = formData.get("Comments");
 
-    console.log(venue, givenNames, lastName, comments);
+    console.log(venue, givenNames, lastName, comments, rating);
   };
 
   return (
@@ -54,6 +54,7 @@ const FeedbackForm = () => {
               <FormControl fullWidth>
                 <TextField
                   label="Venue"
+                  name="Venue"
                   variant="outlined"
                   color="secondary"
                   required
@@ -83,6 +84,7 @@ const FeedbackForm = () => {
               <FormControl fullWidth>
                 <TextField
                   label="Given Names"
+                  name="Given Names"
                   variant="outlined"
                   color="secondary"
                   required
@@ -112,6 +114,7 @@ const FeedbackForm = () => {
               <FormControl fullWidth>
                 <TextField
                   label="Last Name"
+                  name="Last Name"
                   variant="outlined"
                   color="secondary"
                   required
@@ -143,10 +146,10 @@ const FeedbackForm = () => {
                   How did you like our service?
                 </Typography>
                 <Rating
-                  name="simple-controlled"
-                  value={value}
+                  name="Rating"
+                  value={rating}
                   onChange={(event, newValue) => {
-                    setValue(newValue);
+                    setRating(newValue);
                   }}
                   sx={{
                     "& .MuiRating-icon": {
@@ -164,6 +167,7 @@ const FeedbackForm = () => {
               <FormControl fullWidth>
                 <TextField
                   label="Comments"
+                  name="Comments"
                   variant="outlined"
                   color="secondary"
                   multiline
@@ -180,19 +184,26 @@ const FeedbackForm = () => {
                         borderColor: "secondary.main",
                       },
                     },
-                    input: { color: "secondary.main" },
+                    "& .MuiOutlinedInput-input": {
+                      color: "secondary.main",
+                    },
                     "input::placeholder": {
                       color: "secondary.main",
                       opacity: 1,
                     },
                   }}
-                />
+                ></TextField>
               </FormControl>
             </Grid>
 
             <Grid size={12}>
-              <Button variant="contained" type="submit">
-                Submit
+              <Button variant="contained" type="submit" disabled={loading}>
+                Submit{" "}
+                {loading ? (
+                  <CircularProgress size={20} sx={{ ml: 2 }} color="inherit" />
+                ) : (
+                  ""
+                )}
               </Button>
             </Grid>
           </Grid>

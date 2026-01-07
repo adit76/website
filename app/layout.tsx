@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: "Ninja IT",
   description:
     "Your one-stop solution for all your hospitality needs. #POS #HospitalitySoftware #HospitalityTech",
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
