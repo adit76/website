@@ -26,15 +26,15 @@ const menuItems = [
     href: "/",
   },
   {
-    label: "Services",
+    label: "POS Solutions",
     href: "/services",
   },
   {
-    label: "About Us",
+    label: "Digital Solutions",
     href: "/about",
   },
   {
-    label: "Contact Us",
+    label: "About Us",
     href: "/contact",
   },
 ];
@@ -66,7 +66,9 @@ const Header = () => {
             <nav className="menu-items">
               <ul className="flex gap-8">
                 {menuItems.map((item) => (
-                  <li key={item.label}>{item.label}</li>
+                  <li key={item.label} style={{ fontWeight: "bold" }}>
+                    {item.label}
+                  </li>
                 ))}
               </ul>
             </nav>
@@ -74,7 +76,11 @@ const Header = () => {
 
           <div className="actions">
             <Stack spacing={2} direction="row">
-              {!isMobile && <Button variant="text">Login</Button>}
+              {!isMobile && (
+                <Button variant="text" sx={{ fontWeight: "bold" }}>
+                  Login
+                </Button>
+              )}
               {!isMobile && <Button variant="contained">Contact Us</Button>}
 
               {isMobile && (

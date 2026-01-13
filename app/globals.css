@@ -76,7 +76,29 @@ button[disabled]{
   margin-right: auto;
 }
 
+
+
+@media screen and (max-width: 1600px) {
+  .main-banner{
+    min-height: 170vh;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .main-banner{
+    min-height: 150vh;
+  }
+}
+
+
 @media screen and (max-width: 768px) {
+  .cta-but{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin: auto;
+  }
+
   .main-banner{
     min-height: 100vh;
   }
@@ -86,11 +108,16 @@ button[disabled]{
   }
 }
 
-@media screen and (max-width: 600px) {
-  .cta-but{
-    display: flex;
-    flex-direction: column;
-    width: max-content;
-    margin: auto;
-  }
+/* POS Page */
+
+.banner-bg-image::before {
+  content:"";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, .3);
+    z-index: 1;
 }

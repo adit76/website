@@ -8,193 +8,59 @@ import {
   Instagram,
   NorthEast,
 } from "@mui/icons-material";
-import MeteorShower from "../components/meteorShower/page";
-import Clients from "../components/ourClients/page";
-import Marquee from "react-fast-marquee";
+import Clients from "../../components/ourClients/page";
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 
-export function HeroBanner() {
+export default function POS() {
   return (
-    <MeteorShower className="main-banner flex aspect-16/9 items-end justify-center">
-      <Container>
-        <div className="banner-content min-h-screen text-center pt-60 lg:pt-35">
-          <div className="banner-items">
+    <main>
+      {/* Main Banner */}
+      <section
+        id="detail-banner"
+        className="aspect-96/35 relative flex items-center p-12 lg:p-32 "
+      >
+        <Container>
+          <div
+            className="banner-bg-image absolute top-0 bottom-0 right-0 left-0 -z-9"
+            style={{ background: "rgba(10, 10, 10, 0.7)" }}
+          >
+            <Image
+              src="/images/point-of-sale.jpg"
+              alt="POS Banner"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+
+          <div className="banner-items text-center text-white relative z-10 mt-16">
             <Typography
               sx={{
                 mb: 1,
-                fontWeight: "bold",
+                fontWeight: "bolder !important",
                 typography: {
-                  xs: "h3",
-                  lg: "h1",
+                  xs: "h4",
+                  lg: "h3",
                 },
               }}
             >
-              Welcome to Ninja IT Solutions
+              POS Installations and Support
             </Typography>
             <Typography
               // variant="h6"
               sx={{ mb: 4, typography: { sm: "h6", xs: "body1" } }}
             >
               {" "}
-              Our advanced POS software is designed to revolutionize your
-              business operations. With its powerful features and <br />
-              user-friendly interface, enhance customer experiences, and boost
-              your overall efficiency.
+              We keep your POS running; so your business doesn’t stop.
             </Typography>
             <Button
               variant="contained"
               size="large"
               sx={{ fontWeight: "bold" }}
             >
-              Get Started
+              Call Now
             </Button>
           </div>
-          <div className="hero-img pt-24">
-            <Image
-              src="/hero-image.png"
-              alt="Hero Image"
-              width={1800}
-              height={0}
-              priority
-            />
-          </div>
-        </div>
-      </Container>
-    </MeteorShower>
-  );
-}
-
-export default function Home() {
-  return (
-    <main>
-      {/* Main Banner */}
-      <section id="main-banner">
-        <HeroBanner />
-      </section>
-
-      {/* Our Services */}
-      <section
-        id="services"
-        className="py-12 px-2 lg:px-8 lg:py-24"
-        style={{ background: "#F7F7F7" }}
-      >
-        <Container>
-          <Grid container>
-            <Grid size={12}>
-              <div className="services-section pb-8 lg:pb-16 text-center w-full">
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: "#cc1d2e",
-                    fontWeight: "bold !important",
-                    typography: { sm: "h6", xs: "subtitle1" },
-                  }}
-                  gutterBottom
-                >
-                  Grow your Business with Ninja IT
-                </Typography>
-                <Typography
-                  color="text.primary"
-                  sx={{
-                    fontWeight: "bold !important",
-                    typography: { sm: "h3", xs: "h4" },
-                    maxWidth: 780,
-                    margin: "auto",
-                  }}
-                >
-                  A Complete Solution For All Your Hospitality, POS & IT support
-                  needs
-                </Typography>
-              </div>
-            </Grid>
-
-            <Grid size={{ xs: 12, md: 4 }} className="py-4 px-0 lg:px-4">
-              <div className="service-card p-6 bg-white text-black rounded-lg shadow-md h-full">
-                <Image
-                  src="images/icon-pos.svg"
-                  alt="Hero Image"
-                  width={70}
-                  height={0}
-                  priority
-                  className="mb-4 "
-                />
-                <Typography
-                  sx={{
-                    fontWeight: "bold",
-                  }}
-                  variant="h5"
-                  gutterBottom
-                >
-                  POS Solutions
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{ color: "text.secondary", mb: 2 }}
-                >
-                  Streamline your operations with our cutting-edge POS systems
-                  designed for the hospitality industry.
-                </Typography>
-                <Button variant="text">Learn More</Button>
-              </div>
-            </Grid>
-
-            <Grid size={{ xs: 12, md: 4 }} className="py-4 px-0 lg:px-4">
-              <div className="service-card p-6 bg-white text-black rounded-lg shadow-md h-full">
-                <Image
-                  src="images/icon-website.svg"
-                  alt="Hero Image"
-                  width={70}
-                  height={0}
-                  priority
-                  className="mb-4 "
-                />
-                <Typography
-                  sx={{ fontWeight: "bold" }}
-                  variant="h5"
-                  gutterBottom
-                >
-                  Digital Solutions
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{ color: "text.secondary", mb: 2 }}
-                >
-                  Streamline your operations with our cutting-edge POS systems
-                  designed for the hospitality industry.
-                </Typography>
-                <Button variant="text">Learn More</Button>
-              </div>
-            </Grid>
-
-            <Grid size={{ xs: 12, md: 4 }} className="py-4 px-0 lg:px-4">
-              <div className="service-card p-6 bg-white text-black rounded-lg shadow-md h-full">
-                <Image
-                  src="images/icon-pos.svg"
-                  alt="Hero Image"
-                  width={70}
-                  height={0}
-                  priority
-                  className="mb-4 "
-                />
-                <Typography
-                  sx={{ fontWeight: "bold" }}
-                  variant="h5"
-                  gutterBottom
-                >
-                  Business Solutions
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{ color: "text.secondary", mb: 2 }}
-                >
-                  Streamline your operations with our cutting-edge POS systems
-                  designed for the hospitality industry.
-                </Typography>
-                <Button variant="text">Learn More</Button>
-              </div>
-            </Grid>
-          </Grid>
         </Container>
       </section>
 
@@ -229,7 +95,7 @@ export default function Home() {
                     typography: { sm: "h6", xs: "subtitle1" },
                   }}
                 >
-                  Why Choose Us
+                  What We Do
                 </Typography>
                 <Typography
                   color="text.primary"
@@ -239,7 +105,7 @@ export default function Home() {
                     maxWidth: 780,
                   }}
                 >
-                  Quick Value Proposition
+                  End-to-End POS Services
                 </Typography>
               </div>
 
@@ -257,14 +123,14 @@ export default function Home() {
                       variant="h5"
                       gutterBottom
                     >
-                      Why Businesses Choose NinjaIT
+                      POS Installation & Setup
                     </Typography>
                     <Typography
                       variant="body1"
                       sx={{ color: "text.secondary", mb: 2 }}
                     >
-                      Fast, reliable and complete tech solutions for hospitality
-                      and small business.
+                      From your first setup to every system upgrade, we’ve got
+                      your back.
                     </Typography>
                   </div>
                 </Grid>
@@ -281,14 +147,14 @@ export default function Home() {
                       variant="h5"
                       gutterBottom
                     >
-                      Why Businesses Choose NinjaIT
+                      Fast & Reliable Support
                     </Typography>
                     <Typography
                       variant="body1"
                       sx={{ color: "text.secondary", mb: 2 }}
                     >
-                      Fast, reliable and complete tech solutions for hospitality
-                      and small business.
+                      We are available 8am–10pm, 7 days a week, for
+                      installation, maintenance, and issue resolution.
                     </Typography>
                   </div>
                 </Grid>
@@ -305,14 +171,15 @@ export default function Home() {
                       variant="h5"
                       gutterBottom
                     >
-                      Why Businesses Choose NinjaIT
+                      Support & Maintainance
                     </Typography>
                     <Typography
                       variant="body1"
                       sx={{ color: "text.secondary", mb: 2 }}
                     >
-                      Fast, reliable and complete tech solutions for hospitality
-                      and small business.
+                      Bronze, Silver, and Gold programs provide preventative
+                      maintenance, priority support, and loan equipment where
+                      applicable.
                     </Typography>
                   </div>
                 </Grid>
@@ -329,18 +196,122 @@ export default function Home() {
                       variant="h5"
                       gutterBottom
                     >
-                      Why Businesses Choose NinjaIT
+                      Hardware & Consumables
                     </Typography>
                     <Typography
                       variant="body1"
                       sx={{ color: "text.secondary", mb: 2 }}
                     >
-                      Fast, reliable and complete tech solutions for hospitality
-                      and small business.
+                      High-quality POS hardware and consumables are supplied
+                      with manufacturer warranties and next-day delivery within
+                      metro areas.
                     </Typography>
                   </div>
                 </Grid>
               </Grid>
+            </Grid>
+          </Grid>
+        </Container>
+      </section>
+
+      {/* Our Services */}
+      <section
+        id="services"
+        className="py-12 px-2 lg:px-8 lg:py-24"
+        style={{ background: "#F7F7F7" }}
+      >
+        <Container>
+          <Grid container>
+            <Grid size={12}>
+              <div className="services-section pb-8 lg:pb-16 text-center w-full">
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: "#cc1d2e",
+                    fontWeight: "bold !important",
+                    typography: { sm: "h6", xs: "subtitle1" },
+                  }}
+                  gutterBottom
+                >
+                  Trusted POS Partners
+                </Typography>
+                <Typography
+                  color="text.primary"
+                  sx={{
+                    fontWeight: "bold !important",
+                    typography: { sm: "h3", xs: "h4" },
+                    maxWidth: 780,
+                    margin: "auto",
+                  }}
+                >
+                  Certified Support for Leading POS Systems
+                </Typography>
+              </div>
+            </Grid>
+
+            <Grid size={{ xs: 12, md: 4 }} className="py-4 px-0 lg:px-4">
+              <div className="service-card p-6 bg-white text-black rounded-lg shadow-md h-full">
+                <Image
+                  src="/images/redcat.webp"
+                  alt="Hero Image"
+                  width={170}
+                  height={0}
+                  priority
+                  className="mb-4 "
+                />
+                <Typography
+                  variant="body1"
+                  sx={{ color: "text.secondary", mb: 2 }}
+                >
+                  A comprehensive POS solution for hospitality businesses,
+                  designed to streamline operations and manage sales, inventory,
+                  and reporting efficiently.
+                </Typography>
+                <Button variant="text">Learn More</Button>
+              </div>
+            </Grid>
+
+            <Grid size={{ xs: 12, md: 4 }} className="py-4 px-0 lg:px-4">
+              <div className="service-card p-6 bg-white text-black rounded-lg shadow-md h-full">
+                <Image
+                  src="/images/ordermate.png"
+                  alt="Hero Image"
+                  width={170}
+                  height={0}
+                  priority
+                  className="mb-4 "
+                />
+                <Typography
+                  variant="body1"
+                  sx={{ color: "text.secondary", mb: 2 }}
+                >
+                  A specialized POS system for cafés and restaurants, providing
+                  order management, table service, and real-time reporting.
+                </Typography>
+                <Button variant="text">Learn More</Button>
+              </div>
+            </Grid>
+
+            <Grid size={{ xs: 12, md: 4 }} className="py-4 px-0 lg:px-4">
+              <div className="service-card p-6 bg-white text-black rounded-lg shadow-md h-full">
+                <Image
+                  src="/images/oolio.webp"
+                  alt="Hero Image"
+                  width={170}
+                  height={0}
+                  priority
+                  className="mb-4 "
+                />
+                <Typography
+                  variant="body1"
+                  sx={{ color: "text.secondary", mb: 2 }}
+                >
+                  A modern POS platform focused on fast-service and café
+                  environments, offering intuitive interfaces and reliable
+                  transaction management.
+                </Typography>
+                <Button variant="text">Learn More</Button>
+              </div>
             </Grid>
           </Grid>
         </Container>
@@ -367,18 +338,18 @@ export default function Home() {
                   }}
                   gutterBottom
                 >
-                  Our Pricing
+                  Maintenance & Support Plans
                 </Typography>
                 <Typography
                   color="text.primary"
                   sx={{
                     fontWeight: "bold !important",
                     typography: { sm: "h3", xs: "h4" },
-                    maxWidth: 780,
+                    maxWidth: 600,
                     margin: "auto",
                   }}
                 >
-                  Transparent Pricings, Find the Perfect Fit for Your Needs
+                  Reliable Maintenance, Minimal Downtime
                 </Typography>
               </div>
             </Grid>
@@ -404,10 +375,7 @@ export default function Home() {
                       sx={{ fontWeight: "bold", color: "white" }}
                       variant="h4"
                     >
-                      Starter
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: "#EAEAEA" }}>
-                      For small business
+                      Bronze
                     </Typography>
                   </div>
                 </div>
@@ -432,7 +400,7 @@ export default function Home() {
                   <ul className="my-4">
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -441,12 +409,15 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        Priority 3 response: Attempt to respond within 90
+                        minutes; critical equipment outages treated with highest
+                        priority
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -455,12 +426,13 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        Phone support: 8am–10pm, 7 days/week
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -469,12 +441,13 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        On-site support: 9am–5pm, Monday–Friday
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -483,12 +456,14 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        2 free after-hours on-site call-outs per year (5pm–9pm
+                        weekdays, 9am–9pm weekends)
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -497,12 +472,13 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        Loan equipment: Not included
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -511,7 +487,54 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        1 planned preventative maintenance visit per year
+                        (scheduled 1 week in advance)
+                      </Typography>
+                    </li>
+
+                    <li className="flex items-center mb-2">
+                      <div
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
+                        style={{ background: "#CC1D2E" }}
+                      >
+                        <Check />
+                      </div>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ color: "#EAEAEA", ml: 2 }}
+                      >
+                        Assistance with Redcat software upgrades
+                      </Typography>
+                    </li>
+
+                    <li className="flex items-center mb-2">
+                      <div
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
+                        style={{ background: "#CC1D2E" }}
+                      >
+                        <Check />
+                      </div>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ color: "#EAEAEA", ml: 2 }}
+                      >
+                        Hardware and network troubleshooting
+                      </Typography>
+                    </li>
+
+                    <li className="flex items-center mb-2">
+                      <div
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
+                        style={{ background: "#CC1D2E" }}
+                      >
+                        <Check />
+                      </div>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ color: "#EAEAEA", ml: 2 }}
+                      >
+                        5% discount on hardware, consumables, parts, and
+                        services not covered by this agreement
                       </Typography>
                     </li>
                   </ul>
@@ -548,10 +571,7 @@ export default function Home() {
                       sx={{ fontWeight: "bold", color: "white" }}
                       variant="h4"
                     >
-                      Business
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: "#EAEAEA" }}>
-                      For your daily business needs
+                      Silver
                     </Typography>
                   </div>
                 </div>
@@ -576,7 +596,7 @@ export default function Home() {
                   <ul className="my-4">
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -585,12 +605,15 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        Priority 3 response: Attempt to respond within 90
+                        minutes; critical equipment outages treated with highest
+                        priority
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -599,12 +622,13 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        Phone support: 8am–10pm, 7 days/week
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -613,12 +637,13 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        On-site support: 9am–5pm, Monday–Friday
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -627,12 +652,14 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        2 free after-hours on-site call-outs per year (5pm–9pm
+                        weekdays, 9am–9pm weekends)
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -641,12 +668,13 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        Loan equipment: Not included
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -655,7 +683,54 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        1 planned preventative maintenance visit per year
+                        (scheduled 1 week in advance)
+                      </Typography>
+                    </li>
+
+                    <li className="flex items-center mb-2">
+                      <div
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
+                        style={{ background: "#CC1D2E" }}
+                      >
+                        <Check />
+                      </div>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ color: "#EAEAEA", ml: 2 }}
+                      >
+                        Assistance with Redcat software upgrades
+                      </Typography>
+                    </li>
+
+                    <li className="flex items-center mb-2">
+                      <div
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
+                        style={{ background: "#CC1D2E" }}
+                      >
+                        <Check />
+                      </div>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ color: "#EAEAEA", ml: 2 }}
+                      >
+                        Hardware and network troubleshooting
+                      </Typography>
+                    </li>
+
+                    <li className="flex items-center mb-2">
+                      <div
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
+                        style={{ background: "#CC1D2E" }}
+                      >
+                        <Check />
+                      </div>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ color: "#EAEAEA", ml: 2 }}
+                      >
+                        5% discount on hardware, consumables, parts, and
+                        services not covered by this agreement
                       </Typography>
                     </li>
                   </ul>
@@ -692,10 +767,7 @@ export default function Home() {
                       sx={{ fontWeight: "bold", color: "white" }}
                       variant="h4"
                     >
-                      Enterprise
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: "#EAEAEA" }}>
-                      For small business
+                      Gold
                     </Typography>
                   </div>
                 </div>
@@ -720,7 +792,7 @@ export default function Home() {
                   <ul className="my-4">
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -729,12 +801,15 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        Priority 1 response: Attempt to respond within 30
+                        minutes; critical equipment outages treated with highest
+                        priority
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -743,12 +818,13 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        Phone support: 8am–10pm, 7 days/week
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -757,12 +833,13 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        On-site support: 9am–5pm, Monday–Friday
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -771,12 +848,14 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        4 free after-hours on-site call-outs per year (5pm–9pm
+                        weekdays, 9am–9pm weekends)
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -785,12 +864,14 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        Loan equipment: PC, screen, or printer (maximum 2 weeks)
+                        if taken off-site for repair; accessories excluded
                       </Typography>
                     </li>
+
                     <li className="flex items-center mb-2">
                       <div
-                        className="number-box w-8 h-8 rounded-full text-white font-bold flex items-center justify-center "
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
                         style={{ background: "#CC1D2E" }}
                       >
                         <Check />
@@ -799,7 +880,54 @@ export default function Home() {
                         variant="subtitle1"
                         sx={{ color: "#EAEAEA", ml: 2 }}
                       >
-                        Awesome feature
+                        1 planned preventative maintenance visit per year
+                        (scheduled 1 week in advance)
+                      </Typography>
+                    </li>
+
+                    <li className="flex items-center mb-2">
+                      <div
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
+                        style={{ background: "#CC1D2E" }}
+                      >
+                        <Check />
+                      </div>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ color: "#EAEAEA", ml: 2 }}
+                      >
+                        Assistance with Redcat software upgrades
+                      </Typography>
+                    </li>
+
+                    <li className="flex items-center mb-2">
+                      <div
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
+                        style={{ background: "#CC1D2E" }}
+                      >
+                        <Check />
+                      </div>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ color: "#EAEAEA", ml: 2 }}
+                      >
+                        Hardware and network troubleshooting
+                      </Typography>
+                    </li>
+
+                    <li className="flex items-center mb-2">
+                      <div
+                        className="number-box w-8 h-8 mb-auto  p-4 rounded-full text-white font-bold flex items-center justify-center"
+                        style={{ background: "#CC1D2E" }}
+                      >
+                        <Check />
+                      </div>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{ color: "#EAEAEA", ml: 2 }}
+                      >
+                        10% discount on hardware, consumables, parts, and
+                        services not covered by this agreement
                       </Typography>
                     </li>
                   </ul>
@@ -856,7 +984,7 @@ export default function Home() {
                 }}
                 gutterBottom
               >
-                Upgrade Your Business with Our Cutting-Edge POS Solutions!
+                Upgrade Your Business with Reliable POS Solutions!
               </Typography>
               <Typography
                 sx={{
@@ -866,8 +994,9 @@ export default function Home() {
                 variant="h6"
                 gutterBottom
               >
-                Experience the future of transactions! Schedule a demo today and{" "}
-                witness how our POS solution can revolutionize your business.
+                For detailed information, system advice, or ongoing support,
+                call NinjaIT today and let our expert technicians assist your
+                business efficiently
               </Typography>
             </div>
 
@@ -886,14 +1015,14 @@ export default function Home() {
                   },
                 }}
               >
-                Start Free Trial
+                Submit an Enquiry
               </Button>
               <Button
                 variant="contained"
                 size="large"
                 sx={{ fontWeight: "bold", marginRight: 2, marginBottom: 2 }}
               >
-                Contact Us
+                Call Now
               </Button>
             </div>
           </div>
