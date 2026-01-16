@@ -106,6 +106,7 @@ button[disabled]{
   .hero-img {
     display: none;
   }
+
 }
 
 /* POS Page */
@@ -148,3 +149,4 @@ button[disabled]{
 .subtitle-divider::after {
   margin-left: 12px;
 }
+

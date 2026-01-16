@@ -1,6 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
-import { Button, Typography } from "@mui/material";
+import { Button, Typography, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function ServiceSelector() {
@@ -24,10 +25,11 @@ export default function ServiceSelector() {
     const [activeService, setActiveService] = useState(services[0]);
 
     return (
-        <div className="flex flex-col items-center">
-            {/* Animated Description */}
+        <div className="w-full flex flex-col items-center">
+
+            {/* DESKTOP DESCRIPTION */}
             <div
-                className="mb-6 p-4 rounded-lg shadow-md text-center"
+                className="hidden md:block mb-6 p-4 rounded-lg shadow-md text-center"
                 style={{ background: "#252525", color: "#fff", width: "100%", maxWidth: 600 }}
             >
                 <AnimatePresence mode="wait">
@@ -45,9 +47,74 @@ export default function ServiceSelector() {
                 </AnimatePresence>
             </div>
 
+            {/* MOBILE ACCORDION */}
+            <div className="w-full md:hidden">
+                {services.map((service) => (
+                    <Accordion
+                        key={service.id}
+                        onChange={() => setActiveService(service)}
+                        sx={{
+                            backgroundColor: "#000",
+                            color: "#fff",
+                            border: "1px solid #CC1D2E",
+                            boxShadow: "none",
+                            "&:before": { display: "none" },
+                            "&.Mui-expanded": {
+                                margin: 0,
+                                borderColor: "#CC1D2E"
+                            }
+                        }}
+                    >
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon sx={{ color: "#CC1D2E" }} />}
+                            sx={{
+                                paddingY: 1.5,
+                                "& .MuiAccordionSummary-content": {
+                                    margin: 0
+                                },
+                                "&.Mui-expanded": {
+                                    color: "#CC1D2E"
+                                }
+                            }}
+                        >
+                            <Typography
+                                sx={{
+                                    fontWeight: 700,
+                                    fontSize: "1.05rem",
+                                    letterSpacing: "0.3px"
+                                }}
+                            >
+                                {service.label}
+                            </Typography>
+                        </AccordionSummary>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap justify-center gap-4">
+                        <AccordionDetails
+                            sx={{
+                                backgroundColor: "#000",
+                                color: "#fff",
+                                borderTop: "1px solid #CC1D2E",
+                                paddingTop: 2,
+                                paddingBottom: 2
+                            }}
+                        >
+                            <Typography
+                                sx={{
+                                    fontSize: "0.9rem",
+                                    lineHeight: 1.6,
+                                    opacity: 0.85
+                                }}
+                            >
+                                {service.description}
+                            </Typography>
+                        </AccordionDetails>
+                    </Accordion>
+
+                ))}
+            </div>
+
+
+            {/* DESKTOP BUTTON GRID */}
+            <div className="hidden md:flex flex-wrap justify-center gap-4">
                 {services.map((service) => (
                     <Button
                         key={service.id}
