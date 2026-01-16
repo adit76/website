@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useMemo } from "react";
 import { Container, Button, Typography, Grid, Divider } from "@mui/material";
 import {
   Check,
@@ -11,9 +12,10 @@ import {
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import Marquee from "react-fast-marquee";
-import { useTheme } from "@mui/material/styles";
+import ServiceSelector from "../../components/buttonGrid/page";
 
 export default function Digital() {
+
   return (
     <main>
       {/* Main Banner */}
@@ -189,53 +191,8 @@ export default function Digital() {
                 </Typography>
               </div>
 
-              <div className="button-grid flex flex-wrap justify-center gap-4">
-                <Button variant="contained" size="medium">
-                  Web Design & UI
-                </Button>
-                <Button variant="contained" size="medium">
-                  SEO Services
-                </Button>
-                <Button variant="contained" size="medium">
-                  Web Application Development
-                </Button>
-                <Button variant="contained" size="medium">
-                  Microsoft Solutions
-                </Button>
-                <Button variant="contained" size="medium">
-                  POS Solutions
-                </Button>
-                <Button variant="contained" size="medium">
-                  IT Software & Hardware
-                </Button>
-                <Button variant="contained" size="medium">
-                  Graphic Design
-                </Button>
+              <ServiceSelector />
 
-                <Button variant="contained" size="medium">
-                  Mobile Application Development
-                </Button>
-
-                <Button variant="contained" size="medium">
-                  Digital Marketing
-                </Button>
-                <Button variant="contained" size="medium">
-                  Security & Manageed IT Services
-                </Button>
-                <Button variant="contained" size="medium">
-                  Managed Print Services
-                </Button>
-              </div>
-
-              <div
-                className="button-grid-desc service-card mt-4 p-6 text-black rounded-lg shadow-md"
-                style={{ background: "#252525", color: "#fff" }}
-              >
-                <Typography variant="subtitle1">
-                  Some description that goes into this section
-                </Typography>
-
-              </div>
             </Grid>
           </Grid>
         </Container>
