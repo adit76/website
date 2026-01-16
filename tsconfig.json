@@ -18,6 +18,12 @@
     "noUnusedParameters": false,
     "noImplicitReturns": false,
     "esModuleInterop": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
+
     "plugins": [
       {
         "name": "next"
