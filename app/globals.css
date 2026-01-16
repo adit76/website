@@ -121,3 +121,30 @@ button[disabled]{
     background-color: rgba(10, 10, 10, .3);
     z-index: 1;
 }
+
+.subtitle-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.subtitle-divider::before,
+.subtitle-divider::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  max-width: 30px;
+  background: #CC1D2E;
+}
+
+.subtitle-divider::before {
+  margin-right: 12px;
+}
+
+.subtitle-divider::after {
+  margin-left: 12px;
+}
