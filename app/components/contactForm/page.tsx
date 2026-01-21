@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import ReCAPTCHA from "react-google-recaptcha";
 import {
     Grid,
     Typography,
@@ -19,6 +20,7 @@ export default function ContactForm() {
     const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [enquiry, setEnquiry] = useState("");
+    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
     const handleEnquiryChange = (event: SelectChangeEvent) => {
         setEnquiry(event.target.value);
@@ -26,6 +28,12 @@ export default function ContactForm() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!recaptchaToken) {
+            alert("Please complete the reCAPTCHA.");
+            return;
+        }
+
         setLoading(true);
 
         const formData = new FormData(e.currentTarget);
@@ -38,15 +46,36 @@ export default function ContactForm() {
             phone: formData.get("phone"),
             enquiry,
             description: formData.get("description"),
+            recaptchaToken,
         };
 
-        console.log("Submitted:", payload);
+        try {
+            await emailjs.send(
+                "service_vgjhclj",
+                "template_jl422ry",
+                payload,
+                "_7OSZadtf3-j-UqQG"
+            );
+            setSubmitted(true);
+        } catch (error) {
+            console.error("Error submitting Form:", error);
+        }
 
-        // Simulate API delay
-        try { await emailjs.send("service_vgjhclj", "template_jl422ry", payload, "_7OSZadtf3-j-UqQG"); setSubmitted(true); } catch (error) { console.error("Error submitting Form:", error); } setLoading(false);
+        setLoading(false);
     };
 
-    if (submitted) { return (<div className="flex flex-col items-center justify-center px-4 text-center py-10 min-h-150"> <Typography variant="h4" sx={{ color: "#CC1D2E", mb: 2, fontWeight: "bold" }}> Thank you! </Typography> <Typography variant="subtitle1" sx={{ color: "#252525" }}> Your form has been submitted. We’ll get back to you shortly. </Typography> </div>); }
+    if (submitted) {
+        return (
+            <div className="flex flex-col items-center justify-center px-4 text-center py-10 min-h-150">
+                <Typography variant="h4" sx={{ color: "#CC1D2E", mb: 2, fontWeight: "bold" }}>
+                    Thank you!
+                </Typography>
+                <Typography variant="subtitle1" sx={{ color: "#252525" }}>
+                    Your form has been submitted. We’ll get back to you shortly.
+                </Typography>
+            </div>
+        );
+    }
 
     return (
         <section id="form-section" className="px-4">
@@ -57,68 +86,49 @@ export default function ContactForm() {
                             Contact Form
                         </Typography>
                         <Typography variant="subtitle2" sx={{ color: "#252525" }}>
-                            We&rsquo;ll get back to you as soon as possible!
+                            We’ll get back to you as soon as possible!
                         </Typography>
                     </Grid>
 
-                    <Grid size={{ sm: 12, lg: 6 }} >
+                    <Grid size={{ xs: 12, sm: 12, lg: 6 }}>
                         <FormControl fullWidth>
-                            <TextField
-                                label="Given Names"
-                                name="givenNames"
-                                required
-                            />
+                            <TextField label="Given Names" name="givenNames" required />
                         </FormControl>
                     </Grid>
 
-                    <Grid size={{ sm: 12, lg: 6 }} >
+                    <Grid size={{ xs: 12, sm: 12, lg: 6 }}>
                         <FormControl fullWidth>
-                            <TextField
-                                label="Last Name"
-                                name="lastName"
-                                required
-                            />
+                            <TextField label="Last Name" name="lastName" required />
                         </FormControl>
                     </Grid>
 
                     <Grid size={12}>
                         <FormControl fullWidth>
-                            <TextField
-                                label="Organization / Venue"
-                                name="venue"
-                            />
+                            <TextField label="Organization / Venue" name="venue" />
                         </FormControl>
                     </Grid>
 
-                    <Grid size={{ sm: 12, lg: 6 }} >
+                    <Grid size={{ xs: 12, sm: 12, lg: 6 }}>
                         <FormControl fullWidth>
-                            <TextField
-                                label="Email"
-                                name="email"
-                                type="email"
-                                required
-                            />
+                            <TextField label="Email" name="email" type="email" required />
                         </FormControl>
                     </Grid>
 
-                    <Grid size={{ sm: 12, lg: 6 }} >
+                    <Grid size={{ xs: 12, sm: 12, lg: 6 }}>
                         <FormControl fullWidth>
-                            <TextField
-                                label="Phone"
-                                name="phone"
-                                required
-                            />
+                            <TextField label="Phone" name="phone" required />
                         </FormControl>
                     </Grid>
 
                     <Grid size={12}>
                         <FormControl fullWidth>
-                            <InputLabel>Enquiry</InputLabel>
+                            <InputLabel>Enquiry*</InputLabel>
                             <Select
                                 value={enquiry}
-                                label="Enquiry"
+                                label="Enquiry*"
                                 onChange={handleEnquiryChange}
                                 name="enquiry"
+                                required
                             >
                                 <MenuItem value="General Enquiry">General Enquiry</MenuItem>
                                 <MenuItem value="Quote & Pricing">Request a Quote / Pricing</MenuItem>
@@ -128,36 +138,29 @@ export default function ContactForm() {
                                 <MenuItem value="Marketing & SEO">Digital Marketing / SEO</MenuItem>
                                 <MenuItem value="Careers">Careers / Internship</MenuItem>
                                 <MenuItem value="Others">Others</MenuItem>
-
-
                             </Select>
                         </FormControl>
                     </Grid>
 
                     <Grid size={12}>
                         <FormControl fullWidth>
-                            <TextField
-                                label="Description"
-                                name="description"
-                                multiline
-                                rows={4}
-                            />
+                            <TextField required label="Description" name="description" multiline rows={4} />
                         </FormControl>
                     </Grid>
 
+                    {/* 🔐 reCAPTCHA */}
                     <Grid size={12}>
-                        <Button
-                            variant="contained"
-                            type="submit"
-                            disabled={loading}
-                        >
+                        <ReCAPTCHA
+                            sitekey="6Lfic1EsAAAAAJxqWfS0djjfFNGp79G29TuzAXat"
+                            onChange={(token) => setRecaptchaToken(token)}
+                        />
+                    </Grid>
+
+                    <Grid size={12}>
+                        <Button variant="contained" type="submit" disabled={loading}>
                             Submit
                             {loading && (
-                                <CircularProgress
-                                    size={20}
-                                    sx={{ ml: 2 }}
-                                    color="inherit"
-                                />
+                                <CircularProgress size={20} sx={{ ml: 2 }} color="inherit" />
                             )}
                         </Button>
                     </Grid>
