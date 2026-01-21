@@ -27,6 +27,8 @@ const FeedbackForm = () => {
     const comments = formData.get("Comments");
 
     console.log(venue, givenNames, lastName, comments, rating);
+
+    setLoading(false);
   };
 
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/header/page";
+import Footer from "../components/footer/page";
 
 export default function Main({
   children,
@@ -10,6 +11,7 @@ export default function Main({
     <React.Fragment>
       <Header />
       {children}
+      <Footer />
     </React.Fragment>
   );
 }
