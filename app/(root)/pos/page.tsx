@@ -2,15 +2,9 @@ import Image from "next/image";
 import { Container, Button, Typography, Grid, Divider } from "@mui/material";
 import {
   Check,
-  Facebook,
-  LinkedIn,
-  X,
-  Instagram,
   NorthEast,
 } from "@mui/icons-material";
 import Clients from "../../components/ourClients/page";
-import Paper from "@mui/material/Paper";
-import InputBase from "@mui/material/InputBase";
 
 export default function POS() {
   return (

@@ -2,17 +2,9 @@ import Image from "next/image";
 import { Container, Button, Typography, Grid, Divider } from "@mui/material";
 import {
   Check,
-  Facebook,
-  LinkedIn,
-  X,
-  Instagram,
-  NorthEast,
 } from "@mui/icons-material";
 import MeteorShower from "../components/meteorShower/page";
 import Clients from "../components/ourClients/page";
-import Marquee from "react-fast-marquee";
-import Paper from "@mui/material/Paper";
-import InputBase from "@mui/material/InputBase";
 
 export function HeroBanner() {
   return (
@@ -876,13 +868,13 @@ export default function Home() {
                 variant="contained"
                 size="large"
                 sx={{
-                  bgcolor: "white", // sets the background color
-                  color: "black", // sets the text color for contrast
+                  bgcolor: "white",
+                  color: "black",
                   marginRight: 2,
                   marginBottom: 2,
                   fontWeight: "bold",
                   "&:hover": {
-                    bgcolor: "#dbdbdb", // optional: lighter white on hover
+                    bgcolor: "#dbdbdb",
                   },
                 }}
               >
