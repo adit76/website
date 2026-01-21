@@ -20,7 +20,6 @@ const FeedbackForm = () => {
 
   const formAction = async (formData: FormData) => {
     setLoading(true);
-    // "use server";
     const venue = formData.get("Venue");
     const givenNames = formData.get("Given Names");
     const lastName = formData.get("Last Name");

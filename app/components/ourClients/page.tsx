@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { Container, Typography, Grid } from "@mui/material";
 import Marquee from "react-fast-marquee";

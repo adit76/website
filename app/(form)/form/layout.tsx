@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../../components/header/page";
 
-
 export default function Main({
   children,
 }: Readonly<{

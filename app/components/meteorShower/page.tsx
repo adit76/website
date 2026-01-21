@@ -86,19 +86,19 @@ export default function MeteorShower({
     const themeColors: ThemeColors =
       theme === "dark"
         ? {
-            background: "#ffffff", // Light blue sky
-            meteorHead: "rgba(70, 90, 120, 1)",
-            meteorTailStart: "rgba(70, 90, 120, 1)",
-            meteorTailMiddle: "rgba(100, 120, 150, 0.8)",
-            meteorTailEnd: "rgba(130, 150, 180, 0.1)",
-          }
+          background: "#ffffff", // Light blue sky
+          meteorHead: "rgba(70, 90, 120, 1)",
+          meteorTailStart: "rgba(70, 90, 120, 1)",
+          meteorTailMiddle: "rgba(100, 120, 150, 0.8)",
+          meteorTailEnd: "rgba(130, 150, 180, 0.1)",
+        }
         : {
-            background: "#000000",
-            meteorHead: "rgba(255, 255, 255, 1)",
-            meteorTailStart: "rgba(255, 255, 255, 1)",
-            meteorTailMiddle: "rgba(255, 240, 200, 0.8)",
-            meteorTailEnd: "rgba(255, 200, 100, 0.1)",
-          };
+          background: "#000000",
+          meteorHead: "rgba(255, 255, 255, 1)",
+          meteorTailStart: "rgba(255, 255, 255, 1)",
+          meteorTailMiddle: "rgba(255, 240, 200, 0.8)",
+          meteorTailEnd: "rgba(255, 200, 100, 0.1)",
+        };
 
     // Create meteors with varied starting positions
     const createMeteor = (): Meteor => {
